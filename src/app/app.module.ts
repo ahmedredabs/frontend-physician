@@ -4,14 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { AppComponent } from 'app/app.component';
 import { PhysicianRegisterFormComponent } from 'app/physician-register-form/physician-register-form.component';
-import { PhysicianRegisterService } from 'services/physician-register.service'
 import { HttpClientModule } from '@angular/common/http';
+import { PhysicianLoginFormComponent } from './physician-login-form/physician-login-form.component';
+import { PhysicianService } from 'services/physician.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhysicianRegisterFormComponent
+    PhysicianRegisterFormComponent,
+    PhysicianLoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PhysicianRegisterService],
+  providers: [PhysicianService], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

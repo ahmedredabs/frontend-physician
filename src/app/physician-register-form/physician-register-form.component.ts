@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Physician} from 'model/physician';
-import { PhysicianRegisterService} from 'services/physician-register.service'
+import { PhysicianService} from 'services/physician.service'
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class PhysicianRegisterFormComponent {
   constructor(  
     private route: ActivatedRoute,
     private router: Router,
-    private physicianRegisterService : PhysicianRegisterService){
+    private physicianRegisterService : PhysicianService){
     this.physician = new Physician();
   }
 

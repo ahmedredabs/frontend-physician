@@ -5,7 +5,7 @@ import { AppRoutingModule } from 'app/app-routing.module';
 import { AppComponent } from 'app/app.component';
 import { PhysicianRegisterFormComponent } from 'app/physician-register-form/physician-register-form.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PhysicianLoginFormComponent } from './physician-login-form/physician-login-form.component';
+import { PhysicianLoginFormComponent } from 'app/physician-login-form/physician-login-form.component';
 import { PhysicianService } from 'services/physician.service';
 
 

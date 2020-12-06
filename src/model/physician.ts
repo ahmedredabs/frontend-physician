@@ -1,5 +1,5 @@
 export class Physician {
-    id: '' | undefined;
+    id: string='' ;
     name: string = '';
     password: string = '';
 }

@@ -1,6 +1,13 @@
-<ngx-qrcode
-  [elementType]="elementType"
-  [value]="value"
-  cssClass="bshadow"></ngx-qrcode>
+<h1>Welcome</h1>
 
+<div *ngIf="!isShown" class="class form-group" id="divshow">
+<form (ngSubmit)="onSubmit()" #physcianQrCodeForm="ngForm"> 
+  <a>Do you want to generate a QRCode?</a><br>
+  <button type="submit"  class="btn btn-info">Generate</button>
+</form>
+</div>
+<div  class="row container-fluid" id="QrCodeZone">
+  <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="bshadow">
+  </ngx-qrcode>
   <textarea [(ngModel)] = "value"></textarea>
+</div>

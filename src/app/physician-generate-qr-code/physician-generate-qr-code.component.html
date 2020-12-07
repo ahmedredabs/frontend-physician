@@ -1,6 +1,6 @@
 <h1>Welcome {{name}} </h1>
 
-<div *ngIf="!isShown" class="class form-group" id="divshow">
+<div class="class form-group" id="generateQrCode">
 <form (ngSubmit)="onSubmit()" #physcianQrCodeForm="ngForm"> 
   <a>Do you want to generate a QRCode?</a><br>
   <button type="submit"  class="btn btn-info">Generate</button>

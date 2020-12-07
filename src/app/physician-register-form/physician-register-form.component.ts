@@ -24,7 +24,7 @@ export class PhysicianRegisterFormComponent {
   }
 
   goToHome(){
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
 }

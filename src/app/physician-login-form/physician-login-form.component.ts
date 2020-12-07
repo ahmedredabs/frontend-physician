@@ -32,7 +32,7 @@ export class PhysicianLoginFormComponent {
   // TODO !
   goToQRCodeGenerator(){
     sessionStorage.setItem("physicianId",this.physician.id);
+    sessionStorage.setItem("physicianName",this.physician.name);
     this.router.navigate(['/generateQrCode']);
   }
-
 }

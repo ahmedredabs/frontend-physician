@@ -17,6 +17,7 @@ export class PhysicianGenerateQrCodeComponent {
   elementType=NgxQrcodeElementTypes.URL;
   correctionLevel=NgxQrcodeErrorCorrectionLevels.HIGH;
   value= "";
+  name = sessionStorage.getItem("physicianName")
 
   constructor( 
     private route: ActivatedRoute,
@@ -35,12 +36,7 @@ export class PhysicianGenerateQrCodeComponent {
       console.log("id physician ",sessionStorage.getItem("physicianId"))
      this.physicianQrCode.generate(this.qrCode).subscribe(result=>{
        this.qrCode.id=result.id
-       this.qrCode.physician.name=result.physician.name
        this.value=this.qrCode.id+this.qrCode.id_physician
-       /* qd db aura les bons fk change le code
-       garder nom medc dans le sessionStorage 
-       no need retenir id car on peut l avoir depuis le QrCode
-       */
      })
        
       

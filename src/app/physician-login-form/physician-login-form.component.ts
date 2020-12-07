@@ -20,12 +20,19 @@ export class PhysicianLoginFormComponent {
   }
 
   onSubmit(){
-    this.physicianLoginService.login(this.physician).subscribe(result => this.goToQRCodeGenerator());
+    this.physicianLoginService.login(this.physician)
+    .subscribe(result => {
+      this.physician = result
+      console.log("physician ",this.physician)
+      this.goToQRCodeGenerator()
+    }
+      );
   }
 
   // TODO !
   goToQRCodeGenerator(){
-    this.router.navigate(['/']);
+    sessionStorage.setItem("physicianId",this.physician.id);
+    sessionStorage.setItem("physicianName",this.physician.name);
+    this.router.navigate(['/generateQrCode']);
   }
-
 }

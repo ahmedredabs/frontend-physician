@@ -3,12 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { PhysicianRegisterFormComponent} from 'app/physician-register-form/physician-register-form.component'
 import { PhysicianLoginFormComponent } from 'app/physician-login-form/physician-login-form.component';
 import {PhysicianGenerateQrCodeComponent} from 'app/physician-generate-qr-code/physician-generate-qr-code.component'
+import {AppComponent} from 'app/app.component'
 
 const routes: Routes = [
   { path: 'register', component: PhysicianRegisterFormComponent },
   { path: 'login', component: PhysicianLoginFormComponent },
-  { path: 'generateQrCode', component: PhysicianGenerateQrCodeComponent }
-
+  { path: 'generateQrCode', component: PhysicianGenerateQrCodeComponent },
 ];
 
 

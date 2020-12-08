@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PhysicianService } from 'services/physician.service'
-import {QrCode} from 'model/qr-code'
+import {Qrcode} from 'model/qr-code'
 
 @Component({
   selector: 'app-physician-generate-qr-code',
@@ -11,7 +11,7 @@ import {QrCode} from 'model/qr-code'
 })
 export class PhysicianGenerateQrCodeComponent {
 
-  qrCode:QrCode;
+  qrCode:Qrcode;
   elementType=NgxQrcodeElementTypes.URL;
   correctionLevel=NgxQrcodeErrorCorrectionLevels.HIGH;
   value= "";
@@ -21,15 +21,14 @@ export class PhysicianGenerateQrCodeComponent {
     private route: ActivatedRoute,
     private router: Router,
     private physicianQrCode : PhysicianService){
-    this.qrCode=new QrCode()
+    this.qrCode=new Qrcode()
   }
 
     onSubmit(){
-      this.qrCode.id_physician= sessionStorage.getItem("physicianId");
-      console.log("id physician ",sessionStorage.getItem("physicianId"))
+      this.qrCode.physician.id= sessionStorage.getItem("physicianId");
      this.physicianQrCode.generate(this.qrCode).subscribe(result=>{
        this.qrCode.id=result.id
-       this.value=this.qrCode.id+"/n"+this.qrCode.id_physician
+       this.value=this.qrCode.id+"\n"+this.qrCode.physician.id
      })
        
       

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'app-physician';
+  title = 'blockcovid';
   router: Router;
 
   constructor(

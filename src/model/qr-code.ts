@@ -1,8 +1,7 @@
-import { Physician } from './physician';
+import { Physician } from 'model/physician';
 
-export class QrCode {
+export class Qrcode {
     id: string ="";
-    id_physician :string |null =""; 
     physician:Physician = new Physician();
     
 }

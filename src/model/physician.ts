@@ -1,5 +1,5 @@
 export class Physician {
-    id: string='' ;
+    id: string |null='' ;
     name: string = '';
     password: string = '';
 }

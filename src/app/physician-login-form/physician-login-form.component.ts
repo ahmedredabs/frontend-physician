@@ -22,8 +22,10 @@ export class PhysicianLoginFormComponent {
   onSubmit(){
     this.physicianLoginService.login(this.physician)
     .subscribe(result => {
-      this.physician = result
-      console.log("physician ",this.physician)
+       if(result.id!=null){
+        sessionStorage.setItem("physicianId",result.id);
+        sessionStorage.setItem("physicianName",result.name);
+       }
       this.goToQRCodeGenerator()
     }
       );
@@ -31,8 +33,6 @@ export class PhysicianLoginFormComponent {
 
   // TODO !
   goToQRCodeGenerator(){
-    sessionStorage.setItem("physicianId",this.physician.id);
-    sessionStorage.setItem("physicianName",this.physician.name);
     this.router.navigate(['/generateQrCode']);
   }
 }

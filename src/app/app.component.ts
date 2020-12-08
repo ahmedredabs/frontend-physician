@@ -15,7 +15,10 @@ export class AppComponent {
   ) {
     this.router = r;
   }
-  
+  onLogout(){
+    window.sessionStorage.clear()
+    this.router.navigate(['/']);
+  }
 }
 
 

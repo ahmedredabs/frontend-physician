@@ -1,0 +1,17 @@
+<h2>Welcome to register form</h2>
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #physicianRegisterForm="ngForm">
+        <div class="form-group">
+          <label for="name">name</label>
+          <input type="text" [(ngModel)]="physician.name" class="form-control" id="name" message="name"
+                 placeholder="Enter your name" name="name" required #name="ngModel">
+          <label for="password">password</label>
+          <input type="password" [(ngModel)]="physician.password" class="form-control" id="password" message="password"
+                 placeholder="Enter your company password" name="password" required #password="ngModel">
+        </div>
+        <button type="submit" [disabled]="!physicianRegisterForm.form.valid" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+  

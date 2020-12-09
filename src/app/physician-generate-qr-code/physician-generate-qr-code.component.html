@@ -1,0 +1,16 @@
+<h1>Welcome {{name}} </h1>
+<div *ngIf="showQrCode" class="row container-fluid" id="QrCodeZone">
+  <p>There is your QRCode</p>
+  <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="bshadow">
+  </ngx-qrcode>
+  <a [href]="href"  (click)="downloadQRCode()" download>Download Image</a>
+</div>
+
+<div class="class form-group" id="generateQrCode">
+<form (ngSubmit)="onSubmit()" #physcianQrCodeForm="ngForm"> 
+  <a *ngIf="!showQrCode">Do you want to generate a QRCode?</a><br>
+  <a *ngIf="showQrCode">Do you want to generate another QRCode?</a><br>
+  <button type="submit"  class="btn btn-info">Generate</button>
+</form>
+</div>
+

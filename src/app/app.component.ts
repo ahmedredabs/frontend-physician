@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'app-physician';
+  title = 'blockcovid';
+  router: Router;
+
+  constructor(
+    private r: Router
+  ) {
+    this.router = r;
+  }
+  onLogout(){
+    window.sessionStorage.clear()
+    this.router.navigate(['/']);
+  }
 }
+
+

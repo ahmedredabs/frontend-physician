@@ -15,7 +15,6 @@ import { Qrcode } from 'model/qr-code';
 export class PhysicianGenerateQrCodeComponent {
   qrCode: Qrcode;
   elementType = NgxQrcodeElementTypes.URL;
-  correctionLevel = NgxQrcodeErrorCorrectionLevels.HIGH;
   value = '';
   name = sessionStorage.getItem('physicianName');
   showQrCode = false;

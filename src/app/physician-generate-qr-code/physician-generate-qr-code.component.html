@@ -1,9 +1,13 @@
 <h1>Welcome {{name}} </h1>
-<div *ngIf="showQrCode" class="row container-fluid" id="QrCodeZone">
-  <p>There is your QRCode</p>
-  <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="bshadow">
-  </ngx-qrcode>
-  <a [href]="href"  (click)="downloadQRCode()" download>Download Image</a>
+<div *ngIf="showQrCode" class="card text-white bg-success mb-3" style="max-width: 13rem; ">
+  <div class="card-header">Here's your QR Code :</div>
+  <div class="card-body">
+    <div class="row container-fluid" id="QrCodeZone">
+      <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="bshadow">
+      </ngx-qrcode>
+    </div>
+    <a class="text-dark" [href]="href"  (click)="downloadQRCode()" download>Download Image</a>
+  </div>
 </div>
 
 <div class="class form-group" id="generateQrCode">

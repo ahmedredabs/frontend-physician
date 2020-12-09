@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'blockcovid';
+  title = 'BlockCovid';
   router: Router;
 
   constructor(
@@ -17,7 +17,6 @@ export class AppComponent {
   }
   onLogout(){
     window.sessionStorage.clear()
-    this.router.navigate(['/']);
   }
 }
 

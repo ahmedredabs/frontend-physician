@@ -12,7 +12,7 @@
               <a routerLink="/login" class="btn btn-info">Login</a>
             </li>
             <li class="list-inline-item" *ngIf="router.url == '/generateQrCode'">
-              <a routerLink="/"(ngSubmit)="onLogout()" class="btn btn-info">Logout</a>
+              <a routerLink="/"(click)="onLogout()" class="btn btn-info">Logout</a>
           </ul>
         </div>
       </div>
